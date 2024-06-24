@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using DAY3.Model
+@{
+    var listOfProduct = new List<Product>();
+    
+    listOfProduct.Add(new Product(000,"IPHONE", "BRANDNEW", "000", 15, "12-07-0000"));
+    listOfProduct.Add(new Product(001,"SAMSUNG","BRANDNEW","001",10, "12-07-0000" ));
+    listOfProduct.Add(new Product(002,"OPPO","BRANDNEW","002",10,"12-07-0000"));
+    listOfProduct.Add(new Product(003,"HUAWEI","BRANDNEW","003",15,"12-07-0000"));
+    listOfProduct.Add(new Product(004,"VIVO","BRANDNEW","004",20,"12-07-0000"));
+    
+} 
+<h1>fron product controller</h1>
+<figure class="text-center">
+<div>  
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Code</th>
+            <th>Quantity</th>
+            <th>Create Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(var product in listOfProduct){
+                <tr>
+                <td>@product.ItemID</td>
+                <td>@product.ItemName</td>
+                <td>@product.ItemDescription</td>
+                <td>@product.ItemCode</td>
+                <td>@product.Quantity</td>
+                <td>@product.CreateDate</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+</div>
+</figure>
